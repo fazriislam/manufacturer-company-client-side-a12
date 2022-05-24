@@ -1,0 +1,27 @@
+import React, { useEffect, useState } from 'react';
+import Product from './Product';
+
+const Products = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/product')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, []);
+    return (
+        <div className='w-full lg:w-4/5 mt-5 mx-auto'>
+            <h2 className='text-3xl text-yellow-800 font-bold text-center my-5'>Our Products</h2>
+            <div className='w-full mx-auto grid grid-cols-1 lg:grid-cols-3 lg:bg-secondary gap-3'>
+                {
+                    products.map(product => <Product
+                        key={products._id}
+                        product={product}
+                    />)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default Products;
