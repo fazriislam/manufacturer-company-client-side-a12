@@ -4,6 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import Navbar from './Pages/Shared/Navbar';
+import Footer from './Pages/Shared/Footer';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   return (
@@ -12,8 +14,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/home' element={<Home/>}/>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/purchase/:productId' element={<Purchase />}/>
       </Routes>
+      <Footer/>
       
       <ToastContainer />
     </div>
