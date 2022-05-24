@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Curve Monitor",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfQPMQYENsHQeSYch903f15usTBrFPMFK9A&usqp=CAU",
+      "price": 1717,
+      "description": "Model: Odyssey C49G95TSSW Flicker Free, G-Sync FreeSync Premium Pro 49'' 2k (5120 x 1440) LED Display Response (GTG)ms Refresh Rate: Max 240Hz",
+      "available": 19,
+      "minQuantity": 5
+    },
+    {
+      "name": "DDR5 RAM",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMoCUsHbN-T8xQRi3Z-V-cif1irbbg9ke7SA&usqp=CAU",
+      "price": 980,
+      "description": "Capacity 64GB (32GBx2), Tested Speed (XMP) 5600 MT/s, Tested Latency (XMP) 36-36-36-89, Tested Voltage (XMP) 1.25V",
+      "available": 34,
+      "minQuantity": 10
+    },
+    {
+      "name": "M.2 PCIe Gen3 x4 SSD",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVphZQpSSqeR4T3EuOsqxJXKfwhMXYukbBiw&usqp=CAU",
+      "price": 480,
+      "description": " Capacity: 1TB, Read Speed (Max.) 3,500 MB/s, Write Speed (Max.) 2,800 MB/s",
+      "available": 45,
+      "minQuantity": 10
+    },
+    {
+      "name": "Motherboard",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bbYHLgumoVcKKKPSR4YYCyNliCABdY8bsQ&usqp=CAU",
+      "price": 420,
+      "description": "support every processor, 1 x 256 Mbit flash, ATX Form Factor; 30.5cm x 24.4cm, Dual channel memory architecture, Integrated Graphics Processor, 1 x front panel audio header",
+      "available": 30,
+      "minQuantity": 10
+    },
+    {
+      "name": "Processor",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRIzIKbkC3Ycw0BemRU0XkrfJ99Ex7cP_kqA&usqp=CAU",
+      "price": 1300,
+      "description": "Frequency: 2.90 GHz up to 4.8GHz, 16M Cache, 8 Core 16 Threads, UHD Graphics 630, Maximum Size: 128 GB, Maximum Speed: 2933, Type: DDR4",
+      "available": 29,
+      "minQuantity": 10
+    },
+    {
+      "name": "Graphics Card",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSRVZs-AB8dgo6lOKzO_qiLZ8uTFwlEX-ebQ&usqp=CAU",
+      "price": 2370,
+      "description": "MPN: GV-N3060GAMING OC-12GD, Model: GeForce RTX 3060 GAMING OC, 2nd Gen RT Cores & 3rd Gen Tensor Cores, 12GB GDDR6 192-bit memory interface, NVIDIA Ampere Streaming Multiprocessors, RGB Fusion 2.0, Metal back plate",
+      "available": 20,
+      "minQuantity": 5
+    },
+    {
+      "name": "RGB Cooler",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStojVa6-LtcGcHdgX4wXzEC9-gN-ranD95BA&usqp=CAU",
+      "price": 240,
+      "description": "Model: Gamdias CHIONE P2-360R, Outstanding Thermal Conductivity & Mirror Style Pump, One Click, Sync All, Impeccable Durability, Luminous but not Loud",
+      "available": 25,
+      "minQuantity": 10
+    },
+    {
+      "name": "Keyboard and Mouse Combo",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSizV3wCSFpORpLmKTKbPkKaz0DRXZ1NyJcYw&usqp=CAU",
+      "price": 180,
+      "description": "Hybrid mechanical switches and the anti-ghosting technology, Eight Backlight Effects with Eight colours, 1000Hz Polling Rate/1ms Response Time, 2000 DPI High-Precision Gaming Sensor",
+      "available": 32,
+      "minQuantity": 15
+    }
+  ]
