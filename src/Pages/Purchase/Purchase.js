@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
+import OrderModal from './OrderModal';
 
 const Purchase = () => {
+    const [user] = useAuthState(auth);
     const { productId } = useParams();
+
     const [product, setProduct] = useState([]);
     const { name, img, description, available, minQuantity, price } = product;
 
@@ -11,14 +18,16 @@ const Purchase = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [product]);
+    }, []);
+
+
 
     return (
         <div>
             <h2 className='text-center text-4xl text-orange-900 font-bold my-3'>Get the best product</h2>
             <div className='flex w-11/12 mx-auto'>
 
-                <div className='w-1/2 border'>
+                <section className='w-1/2 border'>
                     <div class="card w-full lg:w-96 bg-base-100 shadow-xl my-3 mx-auto">
                         <figure><img src={img} alt="Shoes" /></figure>
                         <div class="card-body">
@@ -28,16 +37,20 @@ const Purchase = () => {
                             <p><small>Price: ${price}/piece</small></p>
                             <p><small>Available: {available}</small></p>
                             <p><small>Minimum Order: {minQuantity}</small></p>
-                            {/* <div class="card-actions justify-end">
-                            <button class="btn btn-primary">Order Now</button>
-                        </div> */}
+                            <div class="card-actions justify-end">
+                                <label htmlFor="order-modal" class="btn modal-button w-full max-w-xs text-white mt-3">
+                                    Confirm Order
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div className='w-1/2 border'>
-                    <h2 className=' ml-10'>User Details</h2>
-                </div>
+                {user && <OrderModal
+                    user={user}
+                    product={product}
+                ></OrderModal>
+                }
 
             </div>
         </div>

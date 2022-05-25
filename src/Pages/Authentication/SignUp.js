@@ -30,6 +30,7 @@ const SignUp = () => {
         await updateProfile({ displayName: data.name });
         navigate('/');
     };
+    // console.log(user.user.displayName);
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -76,7 +77,7 @@ const SignUp = () => {
 
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
                     </form>
-                    <p><small>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
+                    <p><small>Already have an account? <Link className='text-primary' to="/signin">Please Sign In</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         className="btn btn-outline"

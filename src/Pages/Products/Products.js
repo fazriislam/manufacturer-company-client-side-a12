@@ -9,13 +9,12 @@ const Products = () => {
     useEffect(() => {
         fetch('http://localhost:5000/product')
             .then(res => res.json())
-            .then(data => setProducts(data.slice(0,3)))
+            .then(data => setProducts(data))
     }, []);
 
     const handleOrderBtn = id =>{
         navigate(`/purchase/${id}`)
     }
-
     return (
         <div className='w-full lg:w-11/12 mt-5 mx-auto'>
             <h2 className='text-3xl text-yellow-800 font-bold text-center my-5'>Our Products</h2>

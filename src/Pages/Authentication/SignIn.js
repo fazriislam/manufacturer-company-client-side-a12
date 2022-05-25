@@ -62,7 +62,7 @@ const SignIn = () => {
                         {allError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Sign In" />
                     </form>
-                    <p><small>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
+                    <p><small>New here? <Link className='text-primary' to="/signup">Please Sign Up</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         className="btn btn-outline"
