@@ -7,6 +7,7 @@ import Navbar from './Pages/Shared/Navbar';
 import Footer from './Pages/Shared/Footer';
 import Purchase from './Pages/Purchase/Purchase';
 import SignUp from './Pages/Authentication/SignUp';
+import SignIn from './Pages/Authentication/SignIn';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/purchase/:productId' element={<Purchase />}/>
         <Route path='/signup' element={<SignUp />}/>
+        <Route path='/signin' element={<SignIn />}/>
       </Routes>
       <Footer/>
       
