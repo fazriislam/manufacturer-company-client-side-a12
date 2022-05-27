@@ -1,22 +1,46 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const OrderModal = ({ product, user }) => {
     const { displayName, email } = user;
     const { name, minQuantity, available } = product;
-    let err;
 
     const handleOrder = e => {
         e.preventDefault();
+        const order = {
+            name: displayName,
+            email: email,
+            address: e.target.address.value,
+            phone: e.target.phone.value,
+            productName: name,
+            quantity: e.target.quantity.value,
+        }
         if (e.target.quantity.value < minQuantity) {
-            return err = <><p className='text-red-700'>Minimum Order Quantity {minQuantity}</p></>
+            return toast.error(`Minimum Order Quantity ${minQuantity} piece`);
         }
         if (e.target.quantity.value > available) {
-            return err = <><p className='text-red-700'>Maximum Order Quantity {available}</p></>
+            return toast.error(`Maximum Order Quantity ${available} piece`);
         }
         else {
-            console.log(e.target.quantity.value, 'rtfedrfe');
+            fetch('http://localhost:5000/orders', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(order),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        toast.success(`Order confirm for ${name}`);
+                    }
+                    else {
+                        toast.error(`Order confirmation failed for ${name}. Please try again`);
+                    }
+
+                })
         }
-        
+
     }
 
     return (
@@ -40,7 +64,7 @@ const OrderModal = ({ product, user }) => {
                         <input type="number" name='quantity' required placeholder={`Enter order quantity of ${name}`} className="input text-base input-bordered w-full max-w-xs" />
 
 
-                        {err}
+
                         <input type="submit" value="Submit" className="btn btn-secondary w-full max-w-xs" />
                     </form>
                     {/* <div class="modal-action">
