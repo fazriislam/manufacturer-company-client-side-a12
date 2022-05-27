@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:5000/review')
             .then(res => res.json())
-            .then(data => setReviews(data.slice(0, 3)))
-    }, []);
-
+            .then(data => setReviews(data))
+    }, [reviews]);
     return (
         <div className='w-full lg:w-11/12 mt-5 pb-3 mx-auto bg-red-900 text-white'>
             <h2 className='text-3xl font-bold text-center my-5'>Reviews</h2>
@@ -18,19 +15,25 @@ const Reviews = () => {
                 {
                     reviews.map(review => <>
                         <div class="bg-black grid grid-cols-1 border-2 rounded">
+                            {
+                                review.photo && <div class="avatar">
+                                    <div class="w-16 ml-6 mt-2 rounded-full">
+                                        <img src={review.photo} />
+                                    </div>
+                                </div>
+                            }
+
                             <div class="card-body">
                                 <h2 class="card-title">{review.name}</h2>
-                                <p><small>Email: {review.email}/piece</small></p>
+                                <p><small>Email: {review.email}</small></p>
                                 <p>{review.about}</p>
+                                <p><small>Rating: {review.rating}</small></p>
                             </div>
                         </div>
                     </>)
                 }
             </div>
-            <div className='text-right mr-20 mt-2'>
-                <button onClick={() => navigate('/reviews')} class="bg-white text-black rounded px-2">All Reviews</button>
-            </div>
-        </div>
+        </div >
     );
 };
 
