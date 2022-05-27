@@ -67,9 +67,6 @@ const OrderModal = ({ product, user }) => {
 
                         <input type="submit" value="Submit" className="btn btn-secondary w-full max-w-xs" />
                     </form>
-                    {/* <div class="modal-action">
-                        <label for="my-modal-6" class="btn">Yay!</label>
-                    </div> */}
                 </div>
             </div>
         </div>
