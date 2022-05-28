@@ -19,6 +19,8 @@ import Users from './Pages/Dashboard/Users';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
+import NotFound from './Pages/Shared/NotFound';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -46,7 +48,8 @@ function App() {
           <Route path="manageOrders" element={<ManageOrders />}></Route>
           <Route path="manageProducts" element={<ManageProducts />}></Route>
         </Route>
-
+        <Route path='/myPortfolio' element={<MyPortfolio />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
 
