@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import User from './User';
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -14,9 +15,12 @@ const Users = () => {
             .then(data => setUsers(data))
     }, []);
 
+
+
     return (
         <div>
-            <div class="overflow-x-auto">
+            <h2 className='text-2xl font-bold text-center'>Users</h2>
+            <div class="overflow-x-auto w-11/12 mx-auto">
                 <table class="table w-full">
                     <thead>
                         <tr>
@@ -28,22 +32,16 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => < tr class="hover">
-                                <th>{index + 1}</th>
-                                <td>{user.name ? user.name : 'N/A'}</td>
-                                <td>{user.email}</td>
-                                {user.role==='admin' ? 
-                                "Admin"
-                                :
-                                <button>Make Admin</button>
-                                }
-                            </tr>
+                            users.map((user, index) => <User
+                                user={user}
+                                index={index}
+                            />
                             )
                         }
                     </tbody>
                 </table>
             </div>
-        </div >
+        </div>
     );
 };
 
