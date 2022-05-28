@@ -14,29 +14,34 @@ import AddReview from './Pages/Dashboard/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import Products from './Pages/Products/Products';
 import Reviews from './Pages/Reviews/Reviews';
+import RequireAuth from '../src/Pages/Authentication/RequireAuth';
 
 function App() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/products' element={<Products/>}/>
-        <Route path='/purchase/:productId' element={<Purchase />}/>
-        <Route path='reviews' element={<Reviews />}/>
-        <Route path='/signup' element={<SignUp />}/>
-        <Route path='/signin' element={<SignIn />}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+
+        <Route path='/purchase/:productId' element={<RequireAuth>
+          <Purchase />
+        </RequireAuth>} />
+
+        <Route path='reviews' element={<Reviews />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/signin' element={<SignIn />} />
 
         <Route path='/dashboard' element={<Dashboard />}>
-        <Route index element={<Profile/>}></Route>
-          <Route path="myOrders" element={<MyOrders/>}></Route>
-          <Route path="addReview" element={<AddReview/>}></Route>
+          <Route index element={<Profile />}></Route>
+          <Route path="myOrders" element={<MyOrders />}></Route>
+          <Route path="addReview" element={<AddReview />}></Route>
         </Route>
 
       </Routes>
-      <Footer/>
-      
+      <Footer />
+
       <ToastContainer />
     </div>
   );

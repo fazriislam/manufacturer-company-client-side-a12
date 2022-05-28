@@ -59,7 +59,6 @@ const ProfileModal = ({ user }) => {
             </div>
         </div>
     );
-    // class="btn"
 };
 
 export default ProfileModal;

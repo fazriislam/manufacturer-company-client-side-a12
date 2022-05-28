@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const [
@@ -16,13 +17,17 @@ const SignUp = () => {
     const [updateProfile, updating, perror] = useUpdateProfile(auth);
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
+    const [token] = useToken(user || guser)
     let allError;
 
-    if(loading || updating || gloading){
-        return <Loading/>
+    if (loading || updating || gloading) {
+        return <Loading />
     }
     if (error || perror || gerror) {
         allError = <p className='text-red-500'><small>{error?.message}</small></p>
+    }
+    if (token) {
+        navigate('/');
     }
 
     const onSubmit = async data => {
@@ -30,7 +35,6 @@ const SignUp = () => {
         await updateProfile({ displayName: data.name });
         navigate('/');
     };
-    // console.log(user.user.displayName);
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -81,7 +85,7 @@ const SignUp = () => {
                     <div className="divider">OR</div>
                     <button
                         className="btn btn-outline"
-                        onClick={()=>signInWithGoogle()}
+                        onClick={() => signInWithGoogle()}
                     >Continue with Google</button>
                 </div>
             </div>
