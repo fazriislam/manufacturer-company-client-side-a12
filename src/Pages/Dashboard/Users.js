@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 import User from './User';
 
 const Users = () => {
-    const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        fetch('https://immense-reaches-86349.herokuapp.com/user', {
-            method: 'GET',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => setUsers(data))
-    }, []);
-
-
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()));
+    if (isLoading) {
+        return <Loading />
+    }
 
     return (
         <div>
@@ -35,6 +33,7 @@ const Users = () => {
                             users.map((user, index) => <User
                                 user={user}
                                 index={index}
+                                refetch={refetch}
                             />
                             )
                         }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const User = ({ user, index }) => {
+const User = ({ user, index, refetch }) => {
     const { email, role } = user;
     const makeAdmin = () => {
         fetch(`https://immense-reaches-86349.herokuapp.com/user/admin/${email}`, {
@@ -19,6 +19,7 @@ const User = ({ user, index }) => {
             })
             .then(data => {
                 if (data.modifiedCount > 0) {
+                    refetch();
                     toast.success(`Successfully made an admin`);
                 }
 
@@ -30,7 +31,7 @@ const User = ({ user, index }) => {
             <td>{user.name ? user.name : 'N/A'}</td>
             <td>{user.email}</td>
             <td>
-                {user.role === 'admin' ?
+                {role === 'admin' ?
                     "Admin"
                     :
                     <button onClick={makeAdmin} className='btn'>Make Admin</button>
