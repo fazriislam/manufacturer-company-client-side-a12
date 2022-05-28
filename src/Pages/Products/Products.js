@@ -7,7 +7,7 @@ const Products = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://immense-reaches-86349.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

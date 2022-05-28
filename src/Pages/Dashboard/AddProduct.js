@@ -10,7 +10,7 @@ const AddProduct = () => {
             toast.error('Minimum order cannot be greater then available product');
             return;
         }
-        fetch('http://localhost:5000/product', {
+        fetch('https://immense-reaches-86349.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

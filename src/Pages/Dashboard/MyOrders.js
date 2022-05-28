@@ -7,7 +7,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+        fetch(`https://immense-reaches-86349.herokuapp.com/orders?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
@@ -28,7 +28,7 @@ const MyOrders = () => {
                             <th></th>
                             <th>Product Name</th>
                             <th>Product Quantity</th>
-                            <th>Id</th>
+                            <th>Product Id</th>
                         </tr>
                     </thead>
                     <tbody>

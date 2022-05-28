@@ -28,7 +28,7 @@ const AddReview = () => {
             return toast.error('Rating cannot be greater than 1')
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://immense-reaches-86349.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

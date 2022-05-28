@@ -22,7 +22,7 @@ const OrderModal = ({ product, user }) => {
             return toast.error(`Maximum Order Quantity ${available} piece`);
         }
         else {
-            fetch('http://localhost:5000/orders', {
+            fetch('https://immense-reaches-86349.herokuapp.com/orders', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

@@ -12,7 +12,7 @@ const Profile = () => {
 
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/profile?email=${user?.email}`)
+    //     fetch(`https://immense-reaches-86349.herokuapp.com/profile?email=${user?.email}`)
     //         .then(res => res.json())
     //         .then(data => setProfileInfo(data))
     // }, [profileInfo]);

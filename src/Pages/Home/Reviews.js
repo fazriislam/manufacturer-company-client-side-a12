@@ -6,7 +6,7 @@ const Reviews = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://immense-reaches-86349.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviews(data.slice(0, 3)))
     }, []);

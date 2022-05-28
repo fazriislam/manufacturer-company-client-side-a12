@@ -14,7 +14,7 @@ const Purchase = () => {
     const { name, img, description, available, minQuantity, price } = product;
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://immense-reaches-86349.herokuapp.com/product/${productId}`;
         fetch(url, {
             method: 'GET',
             headers: {

@@ -17,7 +17,7 @@ const ProfileModal = ({ user }) => {
             phone: profileData.target.phone.value,
         }
 
-        // fetch(`http://localhost:5000/profile?email=${email}`, {
+        // fetch(`https://immense-reaches-86349.herokuapp.com/profile?email=${email}`, {
         //         method: 'PATCH',
         //         headers: {
         //             'content-type': 'application/json'
