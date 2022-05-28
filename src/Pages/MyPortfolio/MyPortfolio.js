@@ -23,10 +23,10 @@ const MyPortfolio = () => {
             </div>
             <div className='border-2 mt-1 p-1 text-blue-900 font-semibold'>
                 <h2 className='text-black font-bold'>Live website links</h2>
-                <a href="https://warehouse-98797.web.app/" target="-blank">Click here for first Link</a>
+                <a href="https://warehouse-98797.web.app/" target="-blank">Click here for the first Link</a>
                 <br />
-                <a href="https://travel-guide-fd1e9.firebaseapp.com/" target="-blank">Click here for second Link</a> <br />
-                <a href="https://eloquent-hotteok-5992a9.netlify.app/" target="-blank">Click here for third Link</a>
+                <a href="https://travel-guide-fd1e9.firebaseapp.com/" target="-blank">Click here for the second Link</a> <br />
+                <a href="https://eloquent-hotteok-5992a9.netlify.app/" target="-blank">Click here for the third Link</a>
             </div>
 
 

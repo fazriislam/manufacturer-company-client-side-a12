@@ -21,6 +21,7 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
 import NotFound from './Pages/Shared/NotFound';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import Blog from './Pages/Blog/Blog';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="manageProducts" element={<ManageProducts />}></Route>
         </Route>
         <Route path='/myPortfolio' element={<MyPortfolio />} />
+        <Route path='/blog' element={<Blog />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
