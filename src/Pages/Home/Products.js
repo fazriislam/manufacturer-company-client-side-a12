@@ -9,10 +9,10 @@ const Products = () => {
     useEffect(() => {
         fetch('http://localhost:5000/product')
             .then(res => res.json())
-            .then(data => setProducts(data.slice(0,3)))
+            .then(data => setProducts(data.slice(0, 3)))
     }, []);
 
-    const handleOrderBtn = id =>{
+    const handleOrderBtn = id => {
         navigate(`/purchase/${id}`)
     }
 

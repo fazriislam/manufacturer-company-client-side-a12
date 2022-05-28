@@ -52,7 +52,7 @@ const Profile = () => {
                 </fieldset>
             </section>
             <div className='mt-1'>
-                <label for="profile-modal" onClick={() => setClicked(true)} class="btn modal-button mx-auto lg:ml-48 block lg:w-1/12 w-2/5 pt-4">Edit Profile</label>
+                <label for="profile-modal" onClick={() => setClicked(true)} className="btn modal-button mx-auto lg:ml-48 block lg:w-1/12 w-2/5 pt-4">Edit Profile</label>
             </div>
 
             <div>

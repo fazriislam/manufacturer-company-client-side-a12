@@ -36,11 +36,11 @@ const ProfileModal = ({ user }) => {
 
     return (
         <div>
-            <input type="checkbox" id="profile-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <label for="profile-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="font-bold text-lg">Edit Your Profile</h3>
+            <input type="checkbox" id="profile-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <label for="profile-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="font-bold text-lg">Edit Your Profile</h3>
                     <form onSubmit={handleUpdateProfile}>
                         <label htmlFor="photo">Profile Picture: </label>
                         <input type="file" name="photo" id="photo" />
@@ -51,7 +51,7 @@ const ProfileModal = ({ user }) => {
 
                         <input type="tel" placeholder='Enter Your Phone Number' name='phone' className="input text-xl input-bordered w-full max-w-xs mt-1" />
 
-                        <div class="modal-action">
+                        <div className="modal-action">
                             <input type="submit" value="Update" className='btn' />
                         </div>
                     </form>

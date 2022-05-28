@@ -17,9 +17,9 @@ const Reviews = () => {
             <div className='w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-3'>
                 {
                     reviews.map(review => <>
-                        <div class="bg-black grid grid-cols-1 border-2 rounded">
-                            <div class="card-body">
-                                <h2 class="card-title">{review.name}</h2>
+                        <div className="bg-black grid grid-cols-1 border-2 rounded">
+                            <div className="card-body">
+                                <h2 className="card-title">{review.name}</h2>
                                 <p><small>Email: {review.email}/piece</small></p>
                                 <p>{review.about}</p>
                             </div>
@@ -28,7 +28,7 @@ const Reviews = () => {
                 }
             </div>
             <div className='text-right mr-20 mt-2'>
-                <button onClick={() => navigate('/reviews')} class="bg-white text-black rounded px-2">All Reviews</button>
+                <button onClick={() => navigate('/reviews')} className="bg-white text-black rounded px-2">All Reviews</button>
             </div>
         </div>
     );

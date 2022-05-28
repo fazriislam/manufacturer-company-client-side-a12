@@ -14,17 +14,17 @@ const Reviews = () => {
             <div className='w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-3'>
                 {
                     reviews.map(review => <>
-                        <div class="bg-black grid grid-cols-1 border-2 rounded">
+                        <div className="bg-black grid grid-cols-1 border-2 rounded">
                             {
-                                review.photo && <div class="avatar">
-                                    <div class="w-16 ml-6 mt-2 rounded-full">
+                                review.photo && <div className="avatar">
+                                    <div className="w-16 ml-6 mt-2 rounded-full">
                                         <img src={review.photo} />
                                     </div>
                                 </div>
                             }
 
-                            <div class="card-body">
-                                <h2 class="card-title">{review.name}</h2>
+                            <div className="card-body">
+                                <h2 className="card-title">{review.name}</h2>
                                 <p><small>Email: {review.email}</small></p>
                                 <p>{review.about}</p>
                                 <p><small>Rating: {review.rating}</small></p>

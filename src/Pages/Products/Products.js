@@ -12,7 +12,7 @@ const Products = () => {
             .then(data => setProducts(data))
     }, []);
 
-    const handleOrderBtn = id =>{
+    const handleOrderBtn = id => {
         navigate(`/purchase/${id}`)
     }
     return (

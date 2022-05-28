@@ -20,8 +20,8 @@ const Users = () => {
     return (
         <div>
             <h2 className='text-2xl font-bold text-center'>Users</h2>
-            <div class="overflow-x-auto w-11/12 mx-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto w-11/12 mx-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

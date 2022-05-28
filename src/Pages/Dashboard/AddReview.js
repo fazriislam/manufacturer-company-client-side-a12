@@ -21,11 +21,11 @@ const AddReview = () => {
         }
 
         if (data.rating < 1) {
-           return toast.error('Rating cannot be smaller than 1')
+            return toast.error('Rating cannot be smaller than 1')
         }
 
         if (data.rating > 5) {
-           return toast.error('Rating cannot be greater than 1')
+            return toast.error('Rating cannot be greater than 1')
         }
 
         fetch('http://localhost:5000/review', {

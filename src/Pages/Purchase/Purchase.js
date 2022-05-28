@@ -33,17 +33,17 @@ const Purchase = () => {
             <div className='flex w-11/12 mx-auto'>
 
                 <section className='w-1/2 border'>
-                    <div class="card w-full lg:w-96 bg-base-100 shadow-xl my-3 mx-auto">
+                    <div className="card w-full lg:w-96 bg-base-100 shadow-xl my-3 mx-auto">
                         <figure><img src={img} alt="Shoes" /></figure>
-                        <div class="card-body">
-                            <h2 class="card-title">{name}</h2>
+                        <div className="card-body">
+                            <h2 className="card-title">{name}</h2>
                             <p>About this {name}</p>
                             <p>{description}</p>
                             <p><small>Price: ${price}/piece</small></p>
                             <p><small>Available: {available}</small></p>
                             <p><small>Minimum Order: {minQuantity}</small></p>
-                            <div class="card-actions justify-end">
-                                <label htmlFor="order-modal" class="btn modal-button w-full max-w-xs text-white mt-3">
+                            <div className="card-actions justify-end">
+                                <label htmlFor="order-modal" className="btn modal-button w-full max-w-xs text-white mt-3">
                                     Confirm Order
                                 </label>
                             </div>
