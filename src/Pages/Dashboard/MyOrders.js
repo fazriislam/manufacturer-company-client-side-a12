@@ -20,8 +20,8 @@ const MyOrders = () => {
             .then(data => setOrders(data));
     }, [orders]);
 
-    const handleDelete = id =>{
-        fetch(`http://localhost:5000/orders/${id}`, {
+    const handleDelete = id => {
+        fetch(`https://immense-reaches-86349.herokuapp.com/orders/${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -63,7 +63,7 @@ const MyOrders = () => {
                                     <td className='flex justify-center items-center'>
                                         {(order._id && !order.paid) && <>
                                             <Link to={`/dashboard/payment/${order._id}`} className='btn btn-sm'>Pay</Link>
-                                            <button onClick={()=>handleDelete(order._id)} className='btn btn-sm ml-1 bg-red-800'>Delete</button>
+                                            <button onClick={() => handleDelete(order._id)} className='btn btn-sm ml-1 bg-red-800'>Delete</button>
                                         </>}
                                         {(order.price && order.paid) && <div>
                                             <p><span className='text-green-900 font-bold'>Paid</span></p>

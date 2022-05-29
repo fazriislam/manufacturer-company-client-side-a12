@@ -9,7 +9,7 @@ const ManageProducts = () => {
     const { name, img, description, minQuantity, available, price } = product;
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://immense-reaches-86349.herokuapp.com/product/${id}`;
         console.log(url);
         fetch(url, {
             method: 'GET',
@@ -37,9 +37,9 @@ const ManageProducts = () => {
                     <label for="product-modal" class="btn modal-button bg-red-900">Delete</label>
                 </div>
             </div>
-            {product && <ProductDeleteModal 
-            product={product}
-            setProduct={setProduct}
+            {product && <ProductDeleteModal
+                product={product}
+                setProduct={setProduct}
             />}
         </div>
     );
