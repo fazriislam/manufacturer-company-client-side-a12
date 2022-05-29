@@ -32,7 +32,7 @@ const Purchase = () => {
             <h2 className='text-center text-4xl text-orange-900 font-bold my-3'>Get the best product</h2>
             <div className='flex w-11/12 mx-auto'>
 
-                <section className='w-1/2 border'>
+                <section className='w-1/2 border mx-auto'>
                     <div className="card w-full lg:w-96 bg-base-100 shadow-xl my-3 mx-auto">
                         <figure><img src={img} alt="Shoes" /></figure>
                         <div className="card-body">

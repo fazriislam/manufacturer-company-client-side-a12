@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 const OrderModal = ({ product, user }) => {
     const { displayName, email } = user;
-    const { name, minQuantity, available } = product;
+    const { name, minQuantity, available, price } = product;
 
     const handleOrder = e => {
         e.preventDefault();
@@ -14,6 +14,7 @@ const OrderModal = ({ product, user }) => {
             phone: e.target.phone.value,
             productName: name,
             quantity: e.target.quantity.value,
+            price: price,
         }
         if (e.target.quantity.value < minQuantity) {
             return toast.error(`Minimum Order Quantity ${minQuantity} piece`);
