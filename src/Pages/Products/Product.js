@@ -11,10 +11,6 @@ const Product = ({ product, handleOrderBtn }) => {
     const navigate = useNavigate();
     const { _id, name, img, description, minQuantity, available, price } = product;
 
-    if (!user || !admin) {
-        return <Loading />
-    }
-
     return (
         <div className="card w-full lg:w-96 bg-base-100 shadow-xl my-3 mx-auto">
             <figure><img src={img} alt="Shoes" /></figure>
