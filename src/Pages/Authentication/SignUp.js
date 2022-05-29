@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
+import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
     const [
@@ -12,8 +13,9 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+    const [sendEmailVerification, sending] = useSendEmailVerification(auth);
     const [updateProfile, updating, perror] = useUpdateProfile(auth);
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
@@ -31,7 +33,7 @@ const SignUp = () => {
     }
 
     const onSubmit = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password);
+        await createUserWithEmailAndPassword(auth, data.email, data.password);
         await updateProfile({ displayName: data.name });
         navigate('/');
     };
