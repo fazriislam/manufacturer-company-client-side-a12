@@ -50,7 +50,7 @@ function App() {
           <Route path="users" element={<RequireAdmin><Users /></RequireAdmin>}></Route>
           <Route path="addProduct" element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
           <Route path="manageOrders" element={<RequireAdmin><ManageOrders /></RequireAdmin>}></Route>
-          <Route path="manageProducts" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
+          <Route path="manageProducts/:id" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
         </Route>
         <Route path='/myPortfolio' element={<MyPortfolio />} />
         <Route path='/blog' element={<Blog />} />

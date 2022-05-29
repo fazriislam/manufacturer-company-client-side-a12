@@ -21,7 +21,6 @@ const MyOrders = () => {
     }, [orders]);
 
     const handleDelete = id =>{
-        console.log(id);
         fetch(`http://localhost:5000/orders/${id}`, {
             method: 'DELETE',
             headers: {

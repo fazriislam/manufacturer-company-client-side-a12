@@ -51,7 +51,7 @@ const CheckoutForm = ({ order }) => {
 
         setCardError(error?.message || '')
         setSuccess('');
-        // setProcessing(true);
+        setProcessing(true);
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
             {
